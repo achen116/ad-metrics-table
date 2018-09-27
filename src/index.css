@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+.wrapper {
+	padding: 50px;
+}
+
+.wrapper > div {
+	margin: 0 auto;
+}
+
+.header-name {
+	text-transform: uppercase;
+	text-align: center;
+	word-break: break-all;
+	hyphens: auto;
+}
+
+.cell-data {
+	text-align: center;
+	margin: 0 auto;
+}
