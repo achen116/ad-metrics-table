@@ -49,45 +49,43 @@ class AdsTable extends React.Component {
 		var _this = this;
 
 		return (
-			<div className="wrapper">
-				<Table
-					rowsCount={this.state.adMetricData.length}
-					rowHeight={50}
-					width={500}
-					height={250}
-					headerHeight={50}
-				>
-					<Column
-						header={<Cell className={"header-name"}>Ad Name</Cell>}
+			<Table
+				rowsCount={this.state.adMetricData.length}
+				rowHeight={50}
+				width={500}
+				height={250}
+				headerHeight={50}
+			>
+				<Column
+					header={<Cell className={"header-name"}>Ad Name</Cell>}
+					cell={
+						<AdObjectsCell
+							adMetricData={this.state.adMetricData}
+						/>
+					}
+					width={75}
+					fixed={true}
+				/>
+				{this.state.adMetricNames.map(function(metricName) {
+					return <Column
+						key="metricName"
+						value="metricName"
+						header={<Cell className={"header-name"}>{metricName}</Cell>}
 						cell={
-							<AdObjectsCell
-								adMetricData={this.state.adMetricData}
+							<AdMetricsCell
+								metricName={metricName}
+								adMetricData={_this.state.adMetricData}
 							/>
 						}
-						width={75}
-						fixed={true}
+						width={150}
 					/>
-					{this.state.adMetricNames.map(function(metricName) {
-						return <Column
-							key="metricName"
-							value="metricName"
-							header={<Cell className={"header-name"}>{metricName}</Cell>}
-							cell={
-								<AdMetricsCell
-									metricName={metricName}
-									adMetricData={_this.state.adMetricData}
-								/>
-							}
-							width={150}
-						/>
-					})}
-				</Table>
-			</div>
+				})}
+			</Table>
 		);
 	}
 }
 
 ReactDOM.render(
 	<AdsTable />,
-	document.getElementById('root')
+	document.getElementById('table-container')
 );

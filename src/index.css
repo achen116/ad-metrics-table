@@ -5,11 +5,11 @@ body {
   font-size: 12px;
 }
 
-.wrapper {
+#table-container {
 	padding: 50px;
 }
 
-.wrapper > div {
+#table-container > div {
 	margin: 0 auto;
 }
 
